@@ -114,11 +114,13 @@
   }
 
   .title-other-info{
-    color: white;
+    color: $orangeIcon;
     font-size: 50px;
     font-weight: bold;
-    margin-bottom: 20px;
     text-align: center;
+    b{
+      font-weight: bolder;
+    }
   }
   
   .home-other-info {

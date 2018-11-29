@@ -3,6 +3,11 @@
 .login{
 
   .obs{
+    margin: 5px 10px 0px 15px !important;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px 30px 25px;
+    text-align: center;
     color: $BlackPanel;
     b{
       cursor: pointer;
