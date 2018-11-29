@@ -3,8 +3,8 @@
 * {box-sizing: border-box;}
 
   body {
-    background: $Silletto;
-    color: $Silletto;
+    background-color: $Silletto;
+    // color: $Silletto;
     height: 100%;
     font: 87.5%/1.5em 'Open Sans', sans-serif;
     margin: 0;
@@ -36,7 +36,7 @@ b {
   padding-left: 15px;
   padding-right: 15px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 90%;
 }
 
 .perfil-info{
