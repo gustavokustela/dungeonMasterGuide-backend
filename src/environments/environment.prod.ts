@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://dungeonmastersguide-api.herokuapp.com'
+  baseUrl: 'https://dungeonmastersguide-api.herokuapp.com/api'
 };
