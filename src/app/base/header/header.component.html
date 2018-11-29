@@ -1,0 +1,12 @@
+<div>
+    <mat-toolbar class="header">
+      <a class="logo">Dungeon Master's Journal</a>
+      <div class="header-right">
+        <a class="active" routerLink="/">Home</a>
+        <a *ngIf="!authService.canActivate()" routerLink="/login">Login</a>
+        <a *ngIf="!authService.canActivate()" routerLink="/cadastro">Cadastro</a>
+        
+        <a *ngIf="authService.canActivate()" routerLink="/dashboard">Início</a>
+      </div>
+    </mat-toolbar>
+</div>

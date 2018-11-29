@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {box-sizing: border-box;}
+
+  body {
+    background: $background-default;
+    color: #777;
+    height: 100%;
+    font: 87.5%/1.5em 'Open Sans', sans-serif;
+    margin: 0;
+    padding-top: 65px;
+  }
+  
+
+html * {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.main-container {
+  padding-top: 64px;
+}
+
+b {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.perfil-info{
+  h2{
+    margin-top: -8px;
+    font-size: 14px;
+    text-align: center;
+    color: $IndigoMat;
+    font-weight: 20px;
+    b{
+      font-size: 18px;
+      color: $IndigoMat;
+    }
+  }
+}
+
+
+
+.user {
+  padding: 8px;
+  margin: 5px 10px 0px 50px;
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  
+  object-fit: cover;
+}
+
+.one {
+  background-image: url('http://placehold.it/400x200');
+}
+
+.two {
+  background-image: url('http://placehold.it/200x200');
+}
+
+.three {
+  background-image: url('http://placehold.it/200x400');
+}
+
+._20-width{
+  width: 20%;
+}
+
+._30-width{
+  width: 30%;
+}
+
+._40-width{
+  width: 40%;
+}
+
+._60-width{
+  width: 40%;
+}
+._67-width{
+  width: 67%;
+}
+  
+.full-width {
+  width: 100%;
+}
+
+.half-width{
+  width: 50%;
+}
+
+
+textarea{
+  $textareaheight:70px;
+  min-height: $textareaheight;
+  max-height: $textareaheight;
+  height: $textareaheight;
+}
+
+.white-divisor{
+  color: white;
+}
+
+.redIcon{
+  color: $redIcon;
+}
+
+.greenIcon{
+  color: $greenIcon
+}
+
+.blueIcon{
+  color: $blueIcon;
+}
+
+.orangeIcon{
+  color: $orangeIcon;
+}

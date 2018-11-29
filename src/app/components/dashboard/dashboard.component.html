@@ -1,0 +1,46 @@
+<mat-sidenav-container style="min-height: 100vh">
+  <mat-sidenav mode="side" opened>
+    <app-side-menu></app-side-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div id="dashboard-content">
+      <div id="cads-grid" class="dashboard-main">
+        <section class="default-grid">
+          
+          <div *ngIf="Mesas==0">            
+              <h1 style="color: rgb(16, 10, 49); margin: 50px;">Não existem mesas cadastradas como MESTRE!</h1>            
+          </div>
+
+          <div class="card-widht" *ngFor="let mesa of Mesas">
+            <mat-card class="cards-tables">
+              <mat-card-title class="card-title">{{mesa.nomeMesa}}</mat-card-title>
+              <mat-card-subtitle>Sistema: {{mesa.sistemaMesa}}</mat-card-subtitle>
+              <mat-card-content>
+                <img class="mat-card-avatar" id="img-card" src="/assets/images/fichaEdados.jpg">
+                <p><span>Gênero: {{mesa.generoMesa}}</span><br>
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button routerLink="/detalha-mesa" [fragment]="{ mesaDetalhe: mesa}"><i class="greenIcon material-icons">
+                  format_list_bulleted
+                  </i>Detalhes</button>
+                <button mat-raised-button (click)="showDialogEditaMesa(mesa)"><i class="blueIcon material-icons">
+                  edit
+                  </i>Editar</button>
+                <button mat-raised-button (click)="showDialogDeletaMesa(mesa)"><i class="redIcon material-icons">
+                  cancel
+                  </i>Remover</button>
+                <button mat-raised-button (click)="showDialogAdicionaJogadorMesa(mesa)"><i class="orangeIcon material-icons">
+                  group_add
+                  </i></button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

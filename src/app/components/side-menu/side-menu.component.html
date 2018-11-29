@@ -1,0 +1,51 @@
+<div class="menu-dashboard">
+
+  <div id="navigation">
+    <div class="perfil-info">
+        <figure>
+            <img class="user" *ngIf="Pessoa.imgPerfil" src="{{Pessoa.imgPerfil}}" alt="{{Pessoa.nome}}">
+            <img class="user" *ngIf="!Pessoa.imgPerfil" src="/assets/images/icon-user-default.png" alt="{{Pessoa.nome}}">
+          </figure>
+      <!-- <img id="img-perfil" src="/assets/images/Inuyasha.png" alt="" class="user"> -->
+      <h2>
+        Bem vindo,<b> {{Pessoa.nome}}!</b>
+      </h2>
+    </div>
+
+    <mat-divider Color="white" class="white-divisor"></mat-divider>
+    <ul>
+      <li>
+        <h2>
+          <b>Mesas</b>
+        </h2>
+      </li>
+      <li routerLink="/dashboard">
+        <span>Mestrando</span>
+        <div class="hover"></div>
+      </li>
+      <li routerLink="/mesas-participando">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <span>Participando</span>
+        <div class="hover"></div>
+      </li>
+      <li (click)="showDialogNovaMesa()">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>Nova Mesa</span>
+        <div class="hover"></div>
+      </li>
+    </ul>
+    <mat-divider Color="white" class="white-divisor"></mat-divider>
+    <ul>
+      <li>
+        <h2>
+          <b>Usuário</b>
+        </h2>
+      </li>
+      <li class="bottom" routerLink="/perfil"> <span>Perfil</span>
+        <div class="hover"></div>
+      </li>
+      <li class="bottom" (click)="sair()"> <span>SAIR</span>
+        <div class="hover"></div>
+      </li>
+    </ul>
+  </div>
+</div>

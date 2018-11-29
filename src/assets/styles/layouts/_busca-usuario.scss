@@ -1,0 +1,119 @@
+
+
+
+.add-user-mesa-dialog{
+
+  min-width: 65vw;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+
+  h1 {
+    margin: 0px 0px 40px 20px;
+  }
+}
+
+table{
+  width: 100%
+}
+
+  thead tr th {
+    border-radius: 0;
+    background-color: rgb(230, 138, 53);
+    color: white;
+  }
+
+  tbody tr {
+    transition: all 200ms ease-in-out;
+    width: 90%;
+
+    &:hover {
+      background-color: rgb(166, 207, 253);
+    }
+  }
+
+  th, td {
+    padding: 8px 5px;
+    cursor: pointer;
+  }
+
+  .actions i {
+    vertical-align: middle;
+  }
+
+  .actions{
+    width: max-content;
+    max-width: max-content;
+  }
+
+  .actions a,
+  .actions i {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .actions a {
+    margin: 0 10px;
+    width: max-content;
+    max-width: max-content;
+  }
+
+  .actions .material-big-icon{
+    font-size: 28px;
+  }
+
+  .truncate{
+    width: max-content;
+    max-width: 100%;
+
+    &.text-center {
+      margin: 0 auto;
+    }
+  }
+
+  .table-auto-space{
+    max-width: 0;
+  }
+
+  .table-space-big{
+    width: 300px;
+  }
+    
+  .table-space-medium{
+    width: 150px;
+  }
+
+  .table-space-small{
+    width: 100px;
+  }
+  
+  .table-space-smaller{
+    width: 60px;
+  }
+    
+  .table-actions-4-icons{
+    width: 190px;
+  }
+
+  .table-actions-3-icons{
+    width: 140px;
+  }
+
+  .table-actions-2-icons{
+    width: 100px;
+  }
+
+.table-scroll {
+  overflow: auto;
+  max-height: 250px;
+  width: 100%;
+  margin-top: 20px;
+
+  .default-table {
+    margin-top: 0;
+  }
+  
+  .btn-margin {
+    margin: 25px 0px -20px 0px;
+  }
+}

@@ -1,0 +1,51 @@
+<mat-sidenav-container style="min-height: 100vh">
+  <mat-sidenav mode="side" opened>
+    <app-side-menu></app-side-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div id="dashboard-content">
+      <div id="cads-grid" class="dashboard-main">
+        <div class="resumo-panel">
+
+          <mat-accordion multi="true">
+
+            <div class="tittle">
+              <h1>Título: {{mesaDetalhe.nomeMesa}}</h1>
+              <h2>Gênero: {{mesaDetalhe.generoMesa}}</h2>
+            </div>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                História
+              </mat-expansion-panel-header>
+              {{mesaDetalhe.historia}}
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                Personagens dos Jogadores
+              </mat-expansion-panel-header>
+              {{mesaDetalhe.personagensJogadores}}
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                personagens da história (NPCs)
+              </mat-expansion-panel-header>
+              {{mesaDetalhe.personagens}}
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                Jogadores
+              </mat-expansion-panel-header>
+              <!-- {{mesaDetalhe.mesajogadores}} -->
+            </mat-expansion-panel>
+
+          </mat-accordion>
+
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>

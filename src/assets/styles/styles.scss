@@ -1,0 +1,23 @@
+// partials
+@import "partials/colors";
+@import "partials/grid";
+
+// modules
+@import "modules/header";
+@import "modules/footer";
+
+// layouts
+@import "layouts/base";
+@import "layouts/login";
+@import "layouts/home";
+@import "layouts/cadastro";
+@import "layouts/dashboard";
+@import "layouts/nova-mesa";
+@import "layouts/side-menu";
+@import "layouts/detalhe-mesa";
+@import "layouts/perfil";
+@import "layouts/busca-usuario";
+
+//framework
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

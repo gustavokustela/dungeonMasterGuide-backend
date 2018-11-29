@@ -1,0 +1,42 @@
+<div class="nova-mesa-dialog">
+  <h1 mat-diolod-tittle>Cadastro de Nova Mesa</h1>
+  <div mat-diolog-content class="cadastro-mesa">
+    <form class="cadastro-mesa-form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome Mesa" name="nomeMesa" [(ngModel)]="mesa.nomeMesa">
+      </mat-form-field>
+
+      <p>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Título história" name="tituloMesa" [(ngModel)]="mesa.tituloMesa">
+        </mat-form-field>
+        <mat-form-field class="_30-width">
+          <input matInput placeholder="Genero" name="generoMesa" [(ngModel)]="mesa.generoMesa">
+        </mat-form-field>
+        <mat-form-field class="_67-width min-field">
+          <input matInput placeholder="Sistema de Jogo" name="sistemaMesa" [(ngModel)]="mesa.sistemaMesa">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Personagens da História (NPC)" name="personagens" [(ngModel)]="mesa.personagens"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Personagens dos Jogadores" name="personagensJogadores" [(ngModel)]="mesa.personagensJogadores"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="História" name="historia" [(ngModel)]="mesa.historia"></textarea>
+        </mat-form-field>
+
+      </p>
+    </form>
+
+    <div class="text-center">
+      <h3>Os jogadores podem ser Adicionados no painel principal após a criação da mesa.</h3>
+    </div>
+
+  </div>
+  <div class="text-center" style="width: 100%;">
+    <button mat-button color="warn" (click)="onNoClick()">Cancelar</button>
+    <button mat-button color="primary" (click)="novaMesa()">Salvar</button>
+  </div>
+</div>

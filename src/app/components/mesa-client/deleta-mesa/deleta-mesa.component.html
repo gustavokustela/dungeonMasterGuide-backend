@@ -1,0 +1,12 @@
+<div class="nova-mesa-dialog">
+    <h1 mat-diolod-tittle>Editar Mesa </h1>
+    <div mat-diolog-content class="cadastro-mesa">
+      <p>
+        Tem certeza que deseja EXCLUIR a mesa {{Mesa.nomeMesa}}?
+      </p>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancelar</button>
+      <button mat-button (click)="deletarMesa()">SIM</button>
+    </div>
+  </div>

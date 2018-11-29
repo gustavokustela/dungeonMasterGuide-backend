@@ -1,0 +1,40 @@
+<mat-sidenav-container style="min-height: 100vh">
+  <mat-sidenav mode="side" opened>
+    <app-side-menu></app-side-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div id="dashboard-content">
+      <div id="perfil-grid" class="dashboard-main">
+        <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+        <section style="width=65%" *ngIf="!isLoading" class="default-grid-perfil">
+
+            <mat-card class="cards-tables mat-card-perfil">
+              
+            <figure>
+                <img class="perfil-main" *ngIf="Pessoa.imgPerfil" src="{{Pessoa.imgPerfil}}" alt="{{Pessoa.nome}}">
+                <img class="perfil-main" *ngIf="!Pessoa.imgPerfil" src="/assets/images/icon-user-default.png" alt="{{Pessoa.nome}}">
+              </figure>
+
+              <mat-card-title class="perfil-card-tittle">Informações de {{Pessoa.nome}}</mat-card-title>
+              <div class="default-grid-perfil">
+                <div class="col-8">
+
+                  <mat-list role="list">
+                    <mat-list-item role="listitem">Nome completo: <b>{{Pessoa.nome}} {{Pessoa.sobrenome}}</b></mat-list-item>
+                    <mat-list-item role="listitem">Usuário: <b>{{Pessoa.userName}}</b></mat-list-item>
+                    <mat-list-item role="listitem" *ngIf="Pessoa.tipoJogador">Tipo de Jogador: <b>{{Pessoa.tipoJogador}}</b></mat-list-item>
+                    <mat-list-item role="listitem" *ngIf="!Pessoa.tipoJogador">Tipo de Jogador: <b> Edite para informar</b></mat-list-item>
+                  </mat-list>
+                </div>
+                <div class="col-4">
+                  <button mat-fab color="primary" (click)="openDialog()"><i class="material-icons">edit</i></button>
+                </div>
+              </div>
+            </mat-card>
+        </section>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

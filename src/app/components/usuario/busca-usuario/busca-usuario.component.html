@@ -1,0 +1,47 @@
+<div class="add-user-mesa-dialog">
+  <h1 mat-diolod-tittle>Gerenciar Jogadores</h1>
+  <div mat-diolog-content>
+    <mat-spinner *ngIf="isLoading" mode="indeterminate"></mat-spinner>
+
+    <table *ngIf="!isLoading" class="default-table">
+      <thead>
+        <tr>
+          <th class="table-space-big text-center">Nome</th>
+          <th class="table-space-big text-center">E-mail</th>
+          <th class="table-space-small text-center">Apelido</th>
+          <th class="table-space-small text-center">Adicionar?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td class="text-center">{{usuario.nome}} {{usuario.sobrenome}}</td>
+
+          <td class="text-center">{{usuario.userEmail}}</td>
+          <td class="text-center">{{usuario.userName}}</td>
+
+          <td class="text-center" *ngIf="!verificaParticipante(usuario)"> <i class="orangeIcon material-icons" (click)="adicionaUsuarioMesa(usuario)">
+              group_add
+            </i>
+          </td>
+
+          <td class="text-center" *ngIf="verificaParticipante(usuario)"> <i class="redIcon material-icons" (click)="removeUsuarioMesa(usuario)">
+              person_add_disabled
+            </i>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="btn-margin" mat-dialog-actions>
+      <div class="text-center">
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-raised-button (click)="salvaAlteracaoMesa()">Salvar<i class="greenIcon material-icons">
+            cloud_done
+          </i></button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

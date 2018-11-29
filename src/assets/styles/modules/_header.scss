@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  background-color: $IndigoMat;
+  padding: 10px 10px;
+  // position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  height: 65px !important;
+
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.header a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header-right {
+  margin-left: auto;
+}
