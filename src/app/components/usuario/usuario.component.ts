@@ -28,7 +28,6 @@ export class UsuarioComponent implements OnInit {
       this.Pessoa = response;
       this.isLoading = false;
       this.usuarioService.hideLoader();
-      console.log(this.Pessoa);
     },
       error => {
         this.isLoading = false;

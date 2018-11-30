@@ -26,20 +26,11 @@ export class MesaClientComponent implements OnInit {
     this.mesaClientService.recuperarMesasParticipante().subscribe(response => {
       this.mesaClientService.hideLoader();
       this.mesasParticipante = response;
-      console.log(this.mesasParticipante);
     },
       error => {
         this.mesaClientService.hideLoader();
         this.mesaClientService.showError('Erro ao buscar mesas');
       });
   }
-
-  // populaJogadores() {
-  //   this.mesasParticipante.jogadores.forEach(jogador => {
-  //     if (jogador.userId === this.currentUserId) {
-  //       this.usuarioAtual = jogador.userId;
-  //     }
-  //   });
-  // }
 
 }

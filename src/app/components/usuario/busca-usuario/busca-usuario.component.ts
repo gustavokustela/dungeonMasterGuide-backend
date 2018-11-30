@@ -46,7 +46,6 @@ export class BuscaUsuarioComponent implements OnInit {
       this.usuarioService.hideLoader();
       this.usuarios = response;
       this.isLoading = false;
-      console.log(this.usuarios);
     },
       error => {
         this.usuarioService.hideLoader();
@@ -77,8 +76,6 @@ export class BuscaUsuarioComponent implements OnInit {
     // const pessoa: PessoaVO = this.authService.getLoggedPerson();
 
     this.Mesa.jogadores.forEach(jogador => {
-      console.log(pessoa.userId);
-      console.log(jogador.userId);
       if (jogador.userId === pessoa.userId) {
         participandoControl = true;
       }

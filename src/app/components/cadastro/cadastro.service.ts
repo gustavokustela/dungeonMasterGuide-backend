@@ -15,7 +15,6 @@ export class CadastroService extends BaseService {
   constructor(public http: HttpClient, public snackBar: MatSnackBar) { super(http, snackBar); }
 
   criarUsuario(user) {
-    console.log(user);
     return this.post(environment.baseUrl + '/Users', user);
   }
 

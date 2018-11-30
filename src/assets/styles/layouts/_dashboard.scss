@@ -31,7 +31,24 @@
   -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
+
+.card-title-participando{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: -11px 5px 10px -40px !important;
+    width: 370px;
+    color: $DarkBlue;
+    background-color: $orangeIcon;
+    padding: 20px;    
+
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
+
+}
+
+
 
 .mat-card{
     // padding: 10px 20px 40px 25px;

@@ -58,7 +58,6 @@ export class DashboardComponent implements OnInit {
     this.mesaClientService.recuperarMesa().subscribe(response => {
       this.cadastroService.hideLoader();
       this.Mesas = response;
-      console.log(this.Mesas);
     },
       error => {
         this.cadastroService.hideLoader();
@@ -71,7 +70,6 @@ export class DashboardComponent implements OnInit {
     this.mesaClientService.recuperarMesa().subscribe(response => {
       this.mesaClientService.hideLoader();
       this.Mesas = response;
-      console.log(this.Mesas);
     },
       error => {
         this.cadastroService.hideLoader();

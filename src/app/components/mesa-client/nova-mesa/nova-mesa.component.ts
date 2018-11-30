@@ -36,8 +36,6 @@ export class NovaMesaComponent implements OnInit {
     this.novaMesaService.showLoader();
     this.mesa.idMestre = this.currentUser.userId;
     this.mesa.jogadores = [];
-
-    console.log(this.mesa);
     this.novaMesaService.criarNovaMesa(this.mesa).subscribe(response => {
        this.novaMesaService.hideLoader();
       this.novaMesaService.showSuccess('Mesa Criada Com Sucesso');

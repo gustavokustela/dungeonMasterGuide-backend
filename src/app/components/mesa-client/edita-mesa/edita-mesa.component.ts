@@ -22,15 +22,11 @@ export class EditaMesaComponent implements OnInit {
   public mesa: MesaVO = new MesaVO();
 
   ngOnInit() {
-    console.log(this.data);
   this.mesa = this.data;
   }
 
   editaMesa() {
     this.editaMesaService.showLoader();
-    // this.data.idMestre = this.currentUser.userId;
-
-    console.log(this.mesa);
     this.editaMesaService.EditarMesa(this.mesa).subscribe(response => {
       this.editaMesaService.hideLoader();
       this.editaMesaService.showSuccess('Mesa Editada Com Sucesso');

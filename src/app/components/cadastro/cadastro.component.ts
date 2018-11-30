@@ -32,10 +32,8 @@ export class CadastroComponent implements OnInit {
       this.pessoa.userId = response.id;
       this.pessoa.userEmail = response.email;
 
-      console.log(response.id);
       this.cadastroService.criarPessoa(this.pessoa).subscribe(response => {
           this.cadastroService.hideLoader();
-        console.log(response);
         this.cadastroService.showSuccess('Usuário criado com sucesso');
         this.router.navigate(['/']);
       },
