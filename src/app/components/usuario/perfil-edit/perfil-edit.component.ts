@@ -11,7 +11,6 @@ import { UsuarioService } from '../usuario.service';
 export class PerfilEditComponent implements OnInit {
 
   pessoa: PessoaVO;
-  isLoading = false;
 
   constructor(public dialogRef: MatDialogRef<PerfilEditComponent>,
               @Inject(MAT_DIALOG_DATA) public data: PessoaVO,
@@ -19,7 +18,6 @@ export class PerfilEditComponent implements OnInit {
 
   ngOnInit() {
     this.pessoa = this.data;
-    console.log(this.pessoa);
   }
 
   handleFileSelect(evt) {
@@ -42,16 +40,16 @@ export class PerfilEditComponent implements OnInit {
   }
 
   atualizarPessoa() {
-    this.isLoading = true;
+    this.usuarioService.showLoader();
 
     this.usuarioService.atualizarPessoa(this.pessoa).subscribe(response => {
-      this.isLoading = false;
+      this.usuarioService.hideLoader();
       this.usuarioService.showSuccess('Usuário atualizado com sucesso');
       this.dialogRef.close();
       location.reload();
     },
     error => {
-      this.isLoading = false;
+      this.usuarioService.hideLoader();
       this.usuarioService.showError('Erro ao atualizar usuário');
     });
   }

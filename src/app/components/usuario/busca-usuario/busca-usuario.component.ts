@@ -40,13 +40,16 @@ export class BuscaUsuarioComponent implements OnInit {
   }
 
   BuscaUsuarios() {
+    this.usuarioService.showLoader();
     this.isLoading = true;
     this.buscaUsuarioService.recuperarUsuarios().subscribe(response => {
+      this.usuarioService.hideLoader();
       this.usuarios = response;
       this.isLoading = false;
       console.log(this.usuarios);
     },
       error => {
+        this.usuarioService.hideLoader();
         this.isLoading = false;
         this.buscaUsuarioService.showError('Erro ao buscar usuários mesa');
       });
@@ -54,15 +57,16 @@ export class BuscaUsuarioComponent implements OnInit {
   }
 
   salvaAlteracaoMesa() {
+    this.usuarioService.showLoader();
     this.editaMesaService.EditarMesa(this.Mesa).subscribe(response => {
-
+      this.usuarioService.hideLoader();
       this.editaMesaService.showSuccess('Usuário Alterado com sucesso');
       this.onNoClick();
       this.usuarioService.recuperarPessoa();
       this.usuariosAdicionados = [];
     },
       error => {
-        // this.cadastroService.hideLoader();
+        this.usuarioService.hideLoader();
         this.buscaUsuarioService.showError('Erro adicionar usuários na mesa');
       });
   }

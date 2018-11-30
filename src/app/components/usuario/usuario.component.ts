@@ -22,14 +22,17 @@ export class UsuarioComponent implements OnInit {
   }
 
   recuperaPessoa() {
+    this.usuarioService.showLoader();
     this.isLoading = true;
     this.usuarioService.recuperarPessoa().subscribe(response => {
       this.Pessoa = response;
       this.isLoading = false;
+      this.usuarioService.hideLoader();
       console.log(this.Pessoa);
     },
       error => {
         this.isLoading = false;
+        this.usuarioService.hideLoader();
         this.usuarioService.showError('Erro ao recuperar dados');
       });
   }
