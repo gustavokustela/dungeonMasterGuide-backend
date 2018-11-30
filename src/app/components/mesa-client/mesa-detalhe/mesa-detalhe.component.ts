@@ -7,6 +7,7 @@ import { MesaVO } from 'src/app/base/vo/mesa';
 import { JSONP_ERR_NO_CALLBACK } from '@angular/common/http/src/jsonp';
 import { AnimationQueryMetadata } from '@angular/animations';
 import { PessoaVO } from 'src/app/base/vo/pessoa';
+import { MesaClientService } from '../mesa-client.service';
 
 @Component({
   selector: 'app-mesa-detalhe',
@@ -21,17 +22,20 @@ export class MesaDetalheComponent implements OnInit {
   mesaFrag: any;
   loading = true;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private mesaClientService: MesaClientService) {
   }
 
   ngOnInit() {
-
+    this.mesaClientService.showLoader();
     this.route.fragment.subscribe(params => {
       this.mesaFrag = params;
       this.mesaDetalhe = this.mesaFrag.mesaDetalhe;
+      this.mesaClientService.hideLoader();
     },
       error => {
-        console.log(error);
+        this.mesaClientService.hideLoader();
+        this.mesaClientService.showError('Erro ao carregar detalhes da mesa');
       });
   }
 

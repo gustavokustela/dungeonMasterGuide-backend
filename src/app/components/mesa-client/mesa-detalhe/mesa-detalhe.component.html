@@ -40,7 +40,9 @@
               <mat-expansion-panel-header>
                 Jogadores
               </mat-expansion-panel-header>
-              <!-- {{mesaDetalhe.mesajogadores}} -->
+              <div *ngFor="let jogador of mesaDetalhe.jogadores">
+                <span>{{ jogador.nome }}</span>
+              </div>
             </mat-expansion-panel>
 
           </mat-accordion>
