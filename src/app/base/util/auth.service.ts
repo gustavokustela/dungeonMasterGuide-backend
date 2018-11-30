@@ -12,16 +12,16 @@ export class AuthService extends BaseService implements CanActivate {
 
   login(user) {
 
-    // this.showLoader();
+    this.showLoader();
 
     this.post(environment.baseUrl + '/Users/login', user).subscribe(response => {
       localStorage.setItem('currentUser', JSON.stringify(response));
       this.headers.append('ACCESS_TOKEN', response.id);
-      // this.hideLoader();
+      this.hideLoader();
       this.router.navigate(['/dashboard']);
     },
     error => {
-      // this.hideLoader();
+      this.hideLoader();
       this.showError('Email ou senha inválidos');
     });
   }

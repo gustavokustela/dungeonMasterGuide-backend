@@ -33,19 +33,19 @@ export class NovaMesaComponent implements OnInit {
   }
 
   novaMesa() {
-    // this.cadastroService.showLoader();
+    this.novaMesaService.showLoader();
     this.mesa.idMestre = this.currentUser.userId;
     this.mesa.jogadores = [];
 
     console.log(this.mesa);
     this.novaMesaService.criarNovaMesa(this.mesa).subscribe(response => {
-       // this.cadastroService.hideLoader();
+       this.novaMesaService.hideLoader();
       this.novaMesaService.showSuccess('Mesa Criada Com Sucesso');
       this.onNoClick();
       location.reload();
     },
     error => {
-      // this.cadastroService.hideLoader();
+      this.novaMesaService.hideLoader();
       this.novaMesaService.showError('Erro ao criar mesa');
     });
   }

@@ -22,12 +22,14 @@ export class MesaClientComponent implements OnInit {
   }
 
   recuperaMesas() {
+    this.mesaClientService.showLoader();
     this.mesaClientService.recuperarMesasParticipante().subscribe(response => {
+      this.mesaClientService.hideLoader();
       this.mesasParticipante = response;
       console.log(this.mesasParticipante);
     },
       error => {
-        // this.cadastroService.hideLoader();
+        this.mesaClientService.hideLoader();
         this.mesaClientService.showError('Erro ao buscar mesas');
       });
   }

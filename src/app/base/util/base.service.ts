@@ -58,13 +58,13 @@ export class BaseService {
             });
     }
 
-    // showLoader() {
-    //     document.getElementById('outer-container').classList.add('loading');
-    // }
+    showLoader() {
+        document.getElementById('outer-container').classList.add('loading');
+    }
 
-    // hideLoader() {
-    //     document.getElementById('outer-container').classList.remove('loading');
-    // }
+    hideLoader() {
+        document.getElementById('outer-container').classList.remove('loading');
+    }
 
     showSuccess(successText: string) {
         this.snackBar.open(successText, '', {

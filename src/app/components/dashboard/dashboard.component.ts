@@ -13,6 +13,7 @@ import { EditaMesaComponent } from '../mesa-client/edita-mesa/edita-mesa.compone
 import { AuthService } from 'src/app/base/util/auth.service';
 import { DeletaMesaComponent } from '../mesa-client/deleta-mesa/deleta-mesa.component';
 import { BuscaUsuarioComponent } from '../usuario/busca-usuario/busca-usuario.component';
+import { CadastroService } from '../cadastro/cadastro.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +28,8 @@ export class DashboardComponent implements OnInit {
   constructor(public dialog: MatDialog,
     public authService: AuthService,
     private router: Router,
-    public mesaClientService: MesaClientService) { }
+    public mesaClientService: MesaClientService,
+    private cadastroService: CadastroService) { }
 
   ngOnInit() {
     this.recuperaMesas();
@@ -52,23 +54,27 @@ export class DashboardComponent implements OnInit {
   }
 
   recuperaMesas() {
+    this.mesaClientService.showLoader();
     this.mesaClientService.recuperarMesa().subscribe(response => {
+      this.cadastroService.hideLoader();
       this.Mesas = response;
       console.log(this.Mesas);
     },
       error => {
-        // this.cadastroService.hideLoader();
+        this.cadastroService.hideLoader();
         this.mesaClientService.showError('Erro ao buscar mesas');
       });
   }
 
   recuperaMesasParticipante() {
+    this.mesaClientService.showLoader();
     this.mesaClientService.recuperarMesa().subscribe(response => {
+      this.mesaClientService.hideLoader();
       this.Mesas = response;
       console.log(this.Mesas);
     },
       error => {
-        // this.cadastroService.hideLoader();
+        this.cadastroService.hideLoader();
         this.mesaClientService.showError('Erro ao buscar mesas');
       });
   }

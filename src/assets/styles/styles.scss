@@ -5,6 +5,7 @@
 // modules
 @import "modules/header";
 @import "modules/footer";
+@import "modules/loader";
 
 // layouts
 @import "layouts/base";
@@ -17,7 +18,6 @@
 @import "layouts/detalhe-mesa";
 @import "layouts/perfil";
 @import "layouts/busca-usuario";
-// @import "../rpg_awesome_pack/icons";
 
 //framework
 // @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";

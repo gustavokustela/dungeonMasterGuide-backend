@@ -26,11 +26,13 @@ export class SideMenuComponent implements OnInit {
   }
 
   recuperaPessoa() {
+    this.usuarioService.showLoader();
       this.usuarioService.recuperarPessoa().subscribe(response => {
+        this.usuarioService.hideLoader();
         this.Pessoa = response;
       },
         error => {
-          // this.cadastroService.hideLoader();
+          this.usuarioService.hideLoader();
           this.usuarioService.showError('Erro ao criar mesa');
         });
   }

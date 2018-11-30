@@ -27,18 +27,18 @@ export class EditaMesaComponent implements OnInit {
   }
 
   editaMesa() {
-    // this.cadastroService.showLoader();
+    this.editaMesaService.showLoader();
     // this.data.idMestre = this.currentUser.userId;
 
     console.log(this.mesa);
     this.editaMesaService.EditarMesa(this.mesa).subscribe(response => {
-      // this.cadastroService.hideLoader();
+      this.editaMesaService.hideLoader();
       this.editaMesaService.showSuccess('Mesa Editada Com Sucesso');
       this.onNoClick();
       location.reload();
     },
       error => {
-        // this.cadastroService.hideLoader();
+        this.editaMesaService.hideLoader();
         this.editaMesaService.showError('Erro ao editar mesa');
       });
   }

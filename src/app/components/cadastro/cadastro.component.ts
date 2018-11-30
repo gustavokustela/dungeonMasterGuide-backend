@@ -26,7 +26,7 @@ export class CadastroComponent implements OnInit {
   }
 
   novoUsuario() {
-    // this.cadastroService.showLoader();
+    this.cadastroService.showLoader();
 
     this.cadastroService.criarUsuario(this.user).subscribe(response => {
       this.pessoa.userId = response.id;
@@ -34,18 +34,18 @@ export class CadastroComponent implements OnInit {
 
       console.log(response.id);
       this.cadastroService.criarPessoa(this.pessoa).subscribe(response => {
-        //   // this.cadastroService.hideLoader();
+          this.cadastroService.hideLoader();
         console.log(response);
         this.cadastroService.showSuccess('Usuário criado com sucesso');
         this.router.navigate(['/']);
       },
       error => {
-        // this.cadastroService.hideLoader();
+        this.cadastroService.hideLoader();
         this.cadastroService.showError('Erro ao criar usuário');
       });
     },
     error => {
-      // this.cadastroService.hideLoader();
+      this.cadastroService.hideLoader();
       this.cadastroService.showError('Erro ao criar usuário');
     });
   }

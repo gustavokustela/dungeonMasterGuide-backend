@@ -24,14 +24,15 @@ export class DeletaMesaComponent implements OnInit {
   }
 
   deletarMesa() {
+    this.deletaMesaService.showLoader();
     this.deletaMesaService.removerMesa(this.Mesa.id.toString()).subscribe(response => {
-      // this.cadastroService.hideLoader();
+      this.deletaMesaService.hideLoader();
       this.deletaMesaService.showSuccess('Mesa Removida Com Sucesso');
       this.onNoClick();
       location.reload();
     },
       error => {
-        // this.cadastroService.hideLoader();
+        this.deletaMesaService.hideLoader();
         this.deletaMesaService.showError('Erro ao remover mesa');
       });
   }
